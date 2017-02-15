@@ -39,12 +39,12 @@ class Buildprojects extends Vtiger_CRMEntity {
 		/* Format: Field Label => Array(tablename, columnname) */
 		// tablename should not have prefix 'vtiger_'
 		'Name' => Array('buildprojects', 'bpname'),
-		'Assigned To' => Array('crmentity','smownerid')
+		'Type' => Array('buildprojects', 'bptype'),
 	);
 	var $list_fields_name = Array (
 		/* Format: Field Label => fieldname */
 		'Name' => 'bpname',
-		'Assigned To' => 'assigned_user_id',
+		'Type' => 'bptype',
 	);
 
 	// Make the field link to detail view
@@ -55,12 +55,12 @@ class Buildprojects extends Vtiger_CRMEntity {
 		/* Format: Field Label => Array(tablename, columnname) */
 		// tablename should not have prefix 'vtiger_'
 		'Name' => Array('buildprojects', 'bpname'),
-		'Assigned To' => Array('vtiger_crmentity','assigned_user_id'),
+		'Type' => Array('buildprojects', 'bptype'),
 	);
 	var $search_fields_name = Array (
 		/* Format: Field Label => fieldname */
 		'Name' => 'bpname',
-		'Assigned To' => 'assigned_user_id',
+		'Type' => 'bptype',
 	);
 
 	// For Popup window record selection
@@ -74,7 +74,7 @@ class Buildprojects extends Vtiger_CRMEntity {
 
 	// Used when enabling/disabling the mandatory fields for the module.
 	// Refers to vtiger_field.fieldname values.
-	var $mandatory_fields = Array('bpname','assigned_user_id');
+	var $mandatory_fields = Array('bpname');
 
 	var $default_order_by = 'bpname';
 	var $default_sort_order='ASC';
