@@ -10,27 +10,27 @@
 
 include_once 'modules/Vtiger/CRMEntity.php';
 
-class Licensing extends Vtiger_CRMEntity {
-	var $table_name = 'vtiger_licensing';
-	var $table_index= 'licensingid';
+class Estate extends Vtiger_CRMEntity {
+	var $table_name = 'vtiger_estate';
+	var $table_index= 'estateid';
 
 	/**
 	 * Mandatory table for supporting custom fields.
 	 */
-	var $customFieldTable = Array('vtiger_licensingcf', 'licensingid');
+	var $customFieldTable = Array('vtiger_estatecf', 'estateid');
 
 	/**
 	 * Mandatory for Saving, Include tables related to this module.
 	 */
-	var $tab_name = Array('vtiger_crmentity', 'vtiger_licensing', 'vtiger_licensingcf');
+	var $tab_name = Array('vtiger_crmentity', 'vtiger_estate', 'vtiger_estatecf');
 
 	/**
 	 * Mandatory for Saving, Include tablename and tablekey columnname here.
 	 */
 	var $tab_name_index = Array(
 		'vtiger_crmentity' => 'crmid',
-		'vtiger_licensing' => 'licensingid',
-		'vtiger_licensingcf'=>'licensingid');
+		'vtiger_estate' => 'estateid',
+		'vtiger_estatecf'=>'estateid');
 
 	/**
 	 * Mandatory for Listing (Related listview)
@@ -38,49 +38,49 @@ class Licensing extends Vtiger_CRMEntity {
 	var $list_fields = Array (
 		/* Format: Field Label => Array(tablename, columnname) */
 		// tablename should not have prefix 'vtiger_'
-		'Name' => Array('licensing', 'lname'),
+		'Name' => Array('estate', 'estatename'),
 	);
 	var $list_fields_name = Array (
 		/* Format: Field Label => fieldname */
-		'Name' => 'lname',
+		'Name' => 'estatename',
 	);
 
 	// Make the field link to detail view
-	var $list_link_field = 'lname';
+	var $list_link_field = 'estatename';
 
 	// For Popup listview and UI type support
 	var $search_fields = Array(
 		/* Format: Field Label => Array(tablename, columnname) */
 		// tablename should not have prefix 'vtiger_'
-		'Name' => Array('licensing', 'lname'),
+		'Name' => Array('estate', 'estatename'),
 	);
 	var $search_fields_name = Array (
 		/* Format: Field Label => fieldname */
-		'Name' => 'lname',
+		'Name' => 'estatename',
 	);
 
 	// For Popup window record selection
-	var $popup_fields = Array ('lname');
+	var $popup_fields = Array ('estatename');
 
 	// For Alphabetical search
-	var $def_basicsearch_col = 'lname';
+	var $def_basicsearch_col = 'estatename';
 
 	// Column value to use on detail view record text display
-	var $def_detailview_recname = 'lname';
+	var $def_detailview_recname = 'estatename';
 
 	// Used when enabling/disabling the mandatory fields for the module.
 	// Refers to vtiger_field.fieldname values.
-	var $mandatory_fields = Array('lname');
+	var $mandatory_fields = Array('estatename');
 
-	var $default_order_by = 'lname';
+	var $default_order_by = 'estatename';
 	var $default_sort_order='ASC';
 
-        function Licensing() {
-                $this->log = LoggerManager::getLogger('licensing');
-                $this->log->debug("Entering Licensing() method ...");
+        function Estate() {
+                $this->log = LoggerManager::getLogger('estate');
+                $this->log->debug("Entering Estate() method ...");
                 $this->db = PearDatabase::getInstance();
-                $this->column_fields = getColumnFields('Licensing');
-                $this->log->debug("Exiting Licensing method ...");
+                $this->column_fields = getColumnFields('Estate');
+                $this->log->debug("Exiting Estate method ...");
         }
 
 	/* Generic function to get attachments in the related list of a given module */
